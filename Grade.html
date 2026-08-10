@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calculate Grade</title>
+<style>
+  body { font-family: "Times New Roman", serif; background: #eee; }
+  .box {
+    background: #fff;
+    width: 380px;
+    padding: 20px 25px;
+    margin: 60px auto;
+    border: 1px solid #ccc;
+  }
+  h2 { margin-top: 0; }
+  input[type="text"] { width: 100px; padding: 3px; }
+  button { padding: 4px 12px; }
+  #result { margin-top: 15px; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Calculate Grade</h2>
+  Enter Amount: <input type="text" id="amount">
+  <button onclick="calculateGrade()">Submit</button>
+  <p id="result"></p>
+</div>
+
+<script>
+function calculateGrade() {
+  var amount = Number(document.getElementById("amount").value);
+  var grade;
+
+  if (amount >= 80) {
+    grade = "A";
+  } else if (amount >= 70) {
+    grade = "B";
+  } else if (amount >= 60) {
+    grade = "C";
+  } else if (amount >= 50) {
+    grade = "D";
+  } else {
+    grade = "F";
+  }
+
+  document.getElementById("result").innerHTML = "You got an " + grade;
+}
+</script>
+
+</body>
+</html>
